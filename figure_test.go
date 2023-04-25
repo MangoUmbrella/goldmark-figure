@@ -72,7 +72,7 @@ So this won't be a figure.</p>
 	count++
 	testutil.DoTestCase(markdown, testutil.MarkdownTestCase{
 		No:          count,
-		Description: "Multiple paragrah content",
+		Description: "Multiple paragraph content",
 		Markdown: `
 First paragraph.
 

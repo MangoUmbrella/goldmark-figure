@@ -26,6 +26,13 @@ Render result:
 </figure>
 ```
 
+# Why?
+
+Using dedicated `<figure>` and `<figcaption>` elements makes styling images
+with descriptions much easier.
+[Here](https://mangobaby.app/release-notes/v2023.1) is an example. I hear they
+are also good for SEO.
+
 # Installation
 
 ```

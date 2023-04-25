@@ -1,6 +1,6 @@
 # goldmark-figure
 
-[`goldmark-figure`](https://github.com/MangoUmbrella/goldmark-figure) is a
+[goldmark-figure](https://github.com/MangoUmbrella/goldmark-figure) is a
 [goldmark](http://github.com/yuin/goldmark)
 extension to parse mardown paragraphs that start with an image into HTML
 `<figure>` elements. One nice thing is it doesn't use any new markdown

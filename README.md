@@ -1,5 +1,8 @@
 # goldmark-figure
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/mangoumbrella/goldmark-figure.svg)](https://pkg.go.dev/github.com/mangoumbrella/goldmark-figure)
+[![Test](https://github.com/mangoumbrella/goldmark-figure/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mangoumbrella/goldmark-figure/actions/workflows/test.yml/badge.svg?event=push)
+
 [goldmark-figure](https://github.com/MangoUmbrella/goldmark-figure) is a
 [goldmark](http://github.com/yuin/goldmark)
 extension to parse mardown paragraphs that start with an image into HTML

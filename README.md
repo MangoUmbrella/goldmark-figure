@@ -1,7 +1,8 @@
 # goldmark-figure
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/mangoumbrella/goldmark-figure.svg)](https://pkg.go.dev/github.com/mangoumbrella/goldmark-figure)
-[![Test](https://github.com/mangoumbrella/goldmark-figure/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mangoumbrella/goldmark-figure/actions/workflows/test.yml/badge.svg?event=push)
+[![goldmark-figure Go reference](https://pkg.go.dev/badge/github.com/mangoumbrella/goldmark-figure.svg)](https://pkg.go.dev/github.com/mangoumbrella/goldmark-figure)
+[![goldmark-figure test results](https://github.com/mangoumbrella/goldmark-figure/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/mangoumbrella/goldmark-figure/actions/workflows/test.yml/badge.svg?event=push)
+[![goldmark-figure Go report card](https://goreportcard.com/badge/github.com/mangoumbrella/goldmark-figure)](https://goreportcard.com/report/github.com/mangoumbrella/goldmark-figure)
 
 [goldmark-figure](https://github.com/MangoUmbrella/goldmark-figure) is a
 [goldmark](http://github.com/yuin/goldmark)

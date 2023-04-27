@@ -30,7 +30,8 @@ Render result:
 
 Using dedicated `<figure>` and `<figcaption>` elements makes styling images
 with descriptions much easier.
-[Here](https://mangobaby.app/release-notes/v2023.1) is an example:
+[Here](https://mangobaby.app/parenting-tips/how-to-burp-a-newborn) is an
+example:
 
 ![Example of an HTML figure with figcaption.](/assets/example.png)
 

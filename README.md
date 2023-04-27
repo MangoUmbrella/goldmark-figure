@@ -6,7 +6,7 @@
 
 [goldmark-figure](https://github.com/MangoUmbrella/goldmark-figure) is a
 [goldmark](http://github.com/yuin/goldmark)
-extension to parse mardown paragraphs that start with an image into HTML
+extension to parse markdown paragraphs that start with an image into HTML
 `<figure>` elements. One nice thing is it doesn't use any new markdown
 syntaxes.
 
@@ -30,8 +30,11 @@ Render result:
 
 Using dedicated `<figure>` and `<figcaption>` elements makes styling images
 with descriptions much easier.
-[Here](https://mangobaby.app/release-notes/v2023.1) is an example. I hear they
-are also good for SEO.
+[Here](https://mangobaby.app/release-notes/v2023.1) is an example:
+
+![Example of an HTML figure with figcaption.](/assets/example.png)
+
+I hear they are also good for SEO.
 
 # Installation
 

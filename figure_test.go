@@ -109,6 +109,42 @@ This is the continued line with <strong>bold</strong>.</p></figcaption>
 `,
 	}, t)
 
+	count++
+	testutil.DoTestCase(markdown, testutil.MarkdownTestCase{
+		No:          count,
+		Description: "Two images",
+		Markdown: `
+![Picture of Oscar.](/path/to/cat1.jpg)
+![Picture of Luna.](/path/to/cat2.jpg)
+Awesome captions about the **kitties**.
+`,
+		Expected: `<figure>
+<img src="/path/to/cat1.jpg" alt="Picture of Oscar.">
+<img src="/path/to/cat2.jpg" alt="Picture of Luna.">
+<figcaption><p>Awesome captions about the <strong>kitties</strong>.</p></figcaption>
+</figure>
+`,
+	}, t)
+
+	count++
+	testutil.DoTestCase(markdown, testutil.MarkdownTestCase{
+		No:          count,
+		Description: "Three images",
+		Markdown: `
+![Picture of Oscar.](/path/to/cat1.jpg)
+![Picture of Luna.](/path/to/cat2.jpg)
+![Picture of Oreo.](/path/to/cat3.jpg)
+Awesome captions about the **kitties**.
+`,
+		Expected: `<figure>
+<img src="/path/to/cat1.jpg" alt="Picture of Oscar.">
+<img src="/path/to/cat2.jpg" alt="Picture of Luna.">
+<img src="/path/to/cat3.jpg" alt="Picture of Oreo.">
+<figcaption><p>Awesome captions about the <strong>kitties</strong>.</p></figcaption>
+</figure>
+`,
+	}, t)
+
 }
 
 func TestFigureWithImageLink(t *testing.T) {
@@ -132,6 +168,27 @@ This is caption.
 <img src="https://example.com/image.jpg" alt="Alt text">
 </a>
 <figcaption><p>This is caption.</p></figcaption>
+</figure>
+`,
+	}, t)
+
+	count++
+	testutil.DoTestCase(markdown, testutil.MarkdownTestCase{
+		No:          count,
+		Description: "Multi images",
+		Markdown: `
+![Picture of Oscar.](/path/to/cat1.jpg)
+![Picture of Luna.](/path/to/cat2.jpg)
+Awesome captions about the **kitties**.
+`,
+		Expected: `<figure>
+<a href="/path/to/cat1.jpg">
+<img src="/path/to/cat1.jpg" alt="Picture of Oscar.">
+</a>
+<a href="/path/to/cat2.jpg">
+<img src="/path/to/cat2.jpg" alt="Picture of Luna.">
+</a>
+<figcaption><p>Awesome captions about the <strong>kitties</strong>.</p></figcaption>
 </figure>
 `,
 	}, t)

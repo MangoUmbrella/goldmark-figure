@@ -110,3 +110,29 @@ This is the continued line with <strong>bold</strong>.</p></figcaption>
 	}, t)
 
 }
+
+func TestFigureWithImageLink(t *testing.T) {
+	markdown := goldmark.New(
+		goldmark.WithExtensions(
+			figure.Figure.WithImageLink(),
+		),
+	)
+	count := 0
+
+	count++
+	testutil.DoTestCase(markdown, testutil.MarkdownTestCase{
+		No:          count,
+		Description: "Simple",
+		Markdown: `
+![Alt text](https://example.com/image.jpg)
+This is caption.
+`,
+		Expected: `<figure>
+<a href="https://example.com/image.jpg">
+<img src="https://example.com/image.jpg" alt="Alt text">
+</a>
+<figcaption><p>This is caption.</p></figcaption>
+</figure>
+`,
+	}, t)
+}

@@ -32,13 +32,13 @@ func (b *figureParagraphTransformer) Transform(node *gast.Paragraph, reader text
 	if lines.Len() < 1 {
 		return
 	}
-	var first_seg = lines.At(0)
-	var first_line_str = first_seg.Value(reader.Source())
+	var firstSeg = lines.At(0)
+	var firstLineStr = firstSeg.Value(reader.Source())
 	// Here we simply match by regex.
 	// But this simple regex ignores image descriptions that contain other links.
 	// E.g. ![foo ![bar](/url)](/url2).
 	// See CommonMark spec: https://spec.commonmark.org/0.30/#images.
-	if !imageRegexp.Match(first_line_str) {
+	if !imageRegexp.Match(firstLineStr) {
 		return
 	}
 	figure := fast.NewFigure()

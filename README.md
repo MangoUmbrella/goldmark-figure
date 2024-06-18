@@ -72,7 +72,34 @@ func main() {
 }
 ```
 
-See [`figure_test.go`](/figure_test.go) for detailed usages.
+## Option to add link to the image
+
+Example:
+
+```go
+goldmark.WithExtensions(
+    figure.Figure.WithImageLink(),
+),
+```
+
+Render result:
+
+```html
+<figure>
+<a href="/path/to/cat.jpg">
+<img src="/path/to/cat.jpg" alt="Picture of Oscar." />
+</a>
+<figcaption>Awesome caption about <strong>Oscar</strong> the kitty.</figcaption>
+</figure>
+```
+
+See [`figure_test.go`](/figure_test.go) for more examples.
+
+# Changelog
+
+## v1.1.0 (2024-06-18)
+
+* New option to add a link to the image when rendering the figure (see #1).
 
 # LICENSE
 

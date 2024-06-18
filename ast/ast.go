@@ -6,6 +6,8 @@
 package ast
 
 import (
+	"fmt"
+
 	gast "github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/renderer"
 	"github.com/yuin/goldmark/util"
@@ -86,16 +88,18 @@ func NewFigureCaption() *FigureCaption {
 // FigureHTMLRenderer is a renderer.NodeRenderer implementation that
 // renders Figure nodes.
 type FigureHTMLRenderer struct {
+	renderImageLink bool
 }
 
 // NewFigureHTMLRenderer returns a new FigureHTMLRenderer.
-func NewFigureHTMLRenderer() renderer.NodeRenderer {
-	return &FigureHTMLRenderer{}
+func NewFigureHTMLRenderer(renderImageLink bool) renderer.NodeRenderer {
+	return &FigureHTMLRenderer{renderImageLink: renderImageLink}
 }
 
 // RegisterFuncs implements renderer.NodeRenderer.RegisterFuncs.
 func (r *FigureHTMLRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer) {
 	reg.Register(KindFigure, r.renderFigure)
+	reg.Register(KindFigureImage, r.renderFigureImage)
 	reg.Register(KindFigureCaption, r.renderFigureCaption)
 }
 
@@ -104,6 +108,19 @@ func (r *FigureHTMLRenderer) renderFigure(w util.BufWriter, source []byte, n gas
 		_, _ = w.WriteString("<figure>\n")
 	} else {
 		_, _ = w.WriteString("</figure>\n")
+	}
+	return gast.WalkContinue, nil
+}
+
+func (r *FigureHTMLRenderer) renderFigureImage(w util.BufWriter, source []byte, n gast.Node, entering bool) (gast.WalkStatus, error) {
+	if r.renderImageLink {
+		if image, ok := n.FirstChild().(*gast.Image); ok {
+			if entering {
+				_, _ = w.WriteString(fmt.Sprintf("<a href=\"%s\">\n", string(image.Destination)))
+			} else {
+				_, _ = w.WriteString("</a>\n")
+			}
+		}
 	}
 	return gast.WalkContinue, nil
 }

@@ -99,7 +99,8 @@ See [`figure_test.go`](/figure_test.go) for more examples.
 
 ## v1.1.0 (2024-06-18)
 
-* New option to add a link to the image when rendering the figure (see #1).
+* New option to add a link to the image when rendering the figure (see
+  [#4](https://github.com/MangoUmbrella/goldmark-figure/issues/4)).
 
 # LICENSE
 

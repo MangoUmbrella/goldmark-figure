@@ -21,8 +21,8 @@ Render result:
 
 ```html
 <figure>
-    <img src="/path/to/cat.jpg" alt="Picture of Oscar." />
-    <figcaption>Awesome caption about <strong>Oscar</strong> the kitty.</figcaption>
+<img src="/path/to/cat.jpg" alt="Picture of Oscar." />
+<figcaption><p>Awesome caption about <strong>Oscar</strong> the kitty.</p></figcaption>
 </figure>
 ```
 

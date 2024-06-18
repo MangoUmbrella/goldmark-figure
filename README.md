@@ -26,6 +26,22 @@ Render result:
 </figure>
 ```
 
+Multiple images are supported:
+
+```md
+![Picture of Oscar.](/path/to/cat1.jpg)
+![Picture of Luna.](/path/to/cat2.jpg)
+Awesome captions about the **kitties**.
+```
+
+```html
+<figure>
+<img src="/path/to/cat1.jpg" alt="Picture of Oscar.">
+<img src="/path/to/cat2.jpg" alt="Picture of Luna.">
+<figcaption><p>Awesome captions about the <strong>kitties</strong>.</p></figcaption>
+</figure>
+```
+
 # Why?
 
 Using dedicated `<figure>` and `<figcaption>` elements makes styling images
@@ -96,6 +112,11 @@ Render result:
 See [`figure_test.go`](/figure_test.go) for more examples.
 
 # Changelog
+
+## v1.2.0 (2024-06-19)
+
+* Support multiple images (see
+  [#5](https://github.com/MangoUmbrella/goldmark-figure/issues/5)).
 
 ## v1.1.0 (2024-06-18)
 

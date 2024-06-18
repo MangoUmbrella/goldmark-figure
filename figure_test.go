@@ -41,12 +41,29 @@ This is the paragraph content</p>
 		No:          count,
 		Description: "Simple",
 		Markdown: `
-![Image title](https://example.com/image.jpg)
+![Alt text](https://example.com/image.jpg)
 This is the paragraph content.
 This is the continued line.
 `,
 		Expected: `<figure>
-<img src="https://example.com/image.jpg" alt="Image title">
+<img src="https://example.com/image.jpg" alt="Alt text">
+<figcaption><p>This is the paragraph content.
+This is the continued line.</p></figcaption>
+</figure>
+`,
+	}, t)
+
+	count++
+	testutil.DoTestCase(markdown, testutil.MarkdownTestCase{
+		No:          count,
+		Description: "With title",
+		Markdown: `
+![Alt text](https://example.com/image.jpg "Image title")
+This is the paragraph content.
+This is the continued line.
+`,
+		Expected: `<figure>
+<img src="https://example.com/image.jpg" alt="Alt text" title="Image title">
 <figcaption><p>This is the paragraph content.
 This is the continued line.</p></figcaption>
 </figure>
@@ -59,12 +76,12 @@ This is the continued line.</p></figcaption>
 		Description: "Image in the middle isn't a figure",
 		Markdown: `
 Following image is in the middle:
-![Image title](https://example.com/image.jpg)
+![Alt text](https://example.com/image.jpg)
 So this won't be a figure.
 `,
 		Expected: `
 <p>Following image is in the middle:
-<img src="https://example.com/image.jpg" alt="Image title">
+<img src="https://example.com/image.jpg" alt="Alt text">
 So this won't be a figure.</p>
 `,
 	}, t)
@@ -76,7 +93,7 @@ So this won't be a figure.</p>
 		Markdown: `
 First paragraph.
 
-![Image title](https://example.com/image.jpg)
+![Alt text](https://example.com/image.jpg)
 This is the paragraph content.
 This is the continued line with **bold**.
 
@@ -84,7 +101,7 @@ Last paragraph.
 `,
 		Expected: `<p>First paragraph.</p>
 <figure>
-<img src="https://example.com/image.jpg" alt="Image title">
+<img src="https://example.com/image.jpg" alt="Alt text">
 <figcaption><p>This is the paragraph content.
 This is the continued line with <strong>bold</strong>.</p></figcaption>
 </figure>
